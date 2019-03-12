@@ -93,7 +93,7 @@ public class WebhoseIOClient {
 	 */
 	public JsonElement getNext() throws IOException, URISyntaxException {
 		try {
-			String rawUrl = mNext.replace("\"","");
+			final String rawUrl = mNext.replace("\"","");
 			return  getResponse(rawUrl);
 		} catch (Exception e) {
 			e.printStackTrace();

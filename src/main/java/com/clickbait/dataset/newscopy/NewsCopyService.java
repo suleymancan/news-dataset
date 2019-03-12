@@ -17,15 +17,15 @@ public class NewsCopyService {
 
 	private final NewsCopyRepository newsCopyRepository;
 
-	public void save(NewsCopy newsCopy){
+	private void save(NewsCopy newsCopy) {
 		newsCopyRepository.save(newsCopy);
 	}
 
-
-	public void saveNewsCopy(List<News> newsList){
+	public void saveNewsCopy(List<News> newsList) {
 
 		newsList.forEach((news) -> {
-			NewsCopy newsCopy = NewsCopy.builder()
+			//@formatter:off
+			final NewsCopy newsCopy = NewsCopy.builder()
 					.title(news.getTitle())
 					.text(news.getText())
 					.url(news.getUrl())
@@ -34,12 +34,10 @@ public class NewsCopyService {
 					.published(news.getPublished())
 					.clickbait(news.getClickbait())
 					.build();
-
+			//@formatter:on
 			this.save(newsCopy);
 		});
 
 	}
-
-
 
 }
