@@ -16,5 +16,7 @@ spring:
           format_sql: true
 
 web-hose:
-  api-key: 2d7943fd-22f2-4f2b-b1f6-456a04a63efd
+  api-key: ba5599d7-7f0d-4301-a3a1-0ea2a92d2d0f
+
+
 

@@ -68,7 +68,7 @@ class NewsService {
 
 		return newsList;
 	}
-	//35
+
 	List<News> getNaynCoNews() {
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:nayn.co");
@@ -76,7 +76,7 @@ class NewsService {
 		queries.put("sort", "published");
 		return getNews(queries,0);
 	}
-	//26
+
 	List<News> getEvrenselNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -87,7 +87,7 @@ class NewsService {
 		return getNews(queries,0);
 
 	}
-	//1067
+
 	List<News> getDikenNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -96,10 +96,10 @@ class NewsService {
 		queries.put("sort", "published");
 
 
-		return getNews(queries,0);
+		return getNews(queries,null);
 
 	}
-	//609
+
 	List<News> getYeniSafakNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -111,7 +111,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//1965
+
 	List<News> getTrtHaberNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -123,7 +123,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//802
+
 	List<News> getCnnTurkNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -135,7 +135,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//6650
+
 	List<News> getHurriyetNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -147,7 +147,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//390
+
 	List<News> getMilliyetNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -159,7 +159,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//5900
+
 	List<News> getSabahNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -172,7 +172,7 @@ class NewsService {
 
 	}
 
-	//5408
+
 	List<News> getCumhuriyetNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -184,7 +184,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//1389
+
 	List<News> getSozcuNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -196,7 +196,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//78
+
 	List<News> getT24News(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -208,7 +208,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//13863
+
 	List<News> getHaberturkNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -220,7 +220,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//4481
+
 	List<News> getNtvNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -232,7 +232,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//298
+
 	List<News> getPostaNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -244,7 +244,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//60
+
 	List<News> getTgrtHaberNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -256,7 +256,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//6260
+
 	List<News> getTurkiyeGazetesiNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -268,7 +268,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//2914
+
 	List<News> getAHaberNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -280,7 +280,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//94
+
 	List<News> getAksamNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -292,7 +292,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//351
+
 	List<News> getBirgunNews() {
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:birgun.net");
@@ -300,7 +300,7 @@ class NewsService {
 		queries.put("sort", "published");
 		return getNews(queries,0);
 	}
-	//89
+
 	List<News> getGunesNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -312,7 +312,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//7067
+
 	List<News> getHaber7News(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -325,7 +325,7 @@ class NewsService {
 
 	}
 
-	//55
+
 	List<News> getNtvSporNews() {
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:ntvspor.net");
@@ -333,7 +333,7 @@ class NewsService {
 		queries.put("sort", "published");
 		return getNews(queries,0);
 	}
-	//138
+
 	List<News> getFanatikNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -345,7 +345,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//22
+
 	List<News> getAbcGazetesiNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -357,7 +357,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//281
+
 	List<News> getOdaTvNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -369,7 +369,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//5951
+
 	List<News> getGercekGundemNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -381,7 +381,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//405
+
 	List<News> getMedyaTavaNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -393,7 +393,7 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//97
+
 	List<News> getInternetHaberNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -405,7 +405,6 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//2768
 	List<News> getFotomacNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -417,7 +416,6 @@ class NewsService {
 		return getNews(queries,null);
 
 	}
-	//1531
 	List<News> getTakvimNews(){
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -428,6 +426,11 @@ class NewsService {
 
 		return getNews(queries,null);
 
+	}
+
+
+	List<News> findAll(){
+		return (List<News>)newsRepository.findAll();
 	}
 
 
