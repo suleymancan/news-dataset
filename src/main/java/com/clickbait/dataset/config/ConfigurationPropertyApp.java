@@ -1,4 +1,4 @@
-package com.clickbait.dataset.news;
+package com.clickbait.dataset.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,10 +11,16 @@ import org.springframework.stereotype.Component;
  * @author suleymancan
  */
 @Component
-@ConfigurationProperties(prefix = "web-hose")
+@ConfigurationProperties(prefix = "app")
 @Getter
 @Setter
-public class Configuration {
+public class ConfigurationPropertyApp {
 
 	private String apiKey;
+
+	private String naynCo;
+
+	private String evrensel;
+
+	private String dokuzsekiz;
 }

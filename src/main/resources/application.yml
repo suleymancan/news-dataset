@@ -15,8 +15,11 @@ spring:
           use_sql_comments: true
           format_sql: true
 
-web-hose:
-  api-key: ba5599d7-7f0d-4301-a3a1-0ea2a92d2d0f
+app:
+  api-key: c92dcd54-eca5-4e21-974d-6379996bd3e5
+  nayn-co: /newstitle/naynco
+  evrensel: /newstitle/evrensel
+  dokuz-sekiz: /newstitle/dokuzsekiz
 
 
 

@@ -1,5 +1,6 @@
 package com.clickbait.dataset.news;
 
+import com.clickbait.dataset.config.ConfigurationPropertyApp;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -26,7 +27,7 @@ class NewsService {
 
 	private final NewsRepository newsRepository;
 
-	private final Configuration configuration;
+	private final ConfigurationPropertyApp configurationPropertyApp;
 
 	void save(final List<News> newsList) {
 		newsList.forEach((news) -> newsRepository.save(news));
@@ -35,7 +36,7 @@ class NewsService {
 	private List<News> getNews(Map<String, String> queries, Integer clickbait) {
 		final List<News> newsList = new ArrayList<>();
 		try {
-			final WebhoseIOClient webhoseIOClient = WebhoseIOClient.getInstance(configuration.getApiKey());
+			final WebhoseIOClient webhoseIOClient = WebhoseIOClient.getInstance(configurationPropertyApp.getApiKey());
 			JsonElement result = webhoseIOClient.query("filterWebContent", queries);
 			int i = 0;
 			final int totalResults = Integer.parseInt(((JsonObject) result).get("totalResults").toString());
@@ -95,7 +96,7 @@ class NewsService {
 		queries.put("ts", "1549379993842");
 		queries.put("sort", "published");
 
-		return getNews(queries, null);
+		return getNews(queries, 0);
 
 	}
 
@@ -280,7 +281,7 @@ class NewsService {
 		queries.put("q", "site:birgun.net");
 		queries.put("ts", "1549366056522");
 		queries.put("sort", "published");
-		return getNews(queries, 0);
+		return getNews(queries, null);
 	}
 
 	List<News> getGunesNews() {
@@ -398,6 +399,39 @@ class NewsService {
 		queries.put("sort", "domain_rank");
 
 		return getNews(queries, null);
+
+	}
+
+	List<News> getEuroNews() {
+
+		final Map<String, String> queries = new HashMap<String, String>();
+		queries.put("q", "site:euronews.com language:turkish");
+		queries.put("ts", "1550062269550");
+		queries.put("sort", "crawled");
+
+		return getNews(queries, 0);
+
+	}
+
+	List<News> getBbcNews() {
+
+		final Map<String, String> queries = new HashMap<String, String>();
+		queries.put("q", "site:bbc.com language:turkish");
+		queries.put("ts", "1550062269550");
+		queries.put("sort", "crawled");
+
+		return getNews(queries, 0);
+
+	}
+
+	List<News> getAANews() {
+
+		final Map<String, String> queries = new HashMap<String, String>();
+		queries.put("q", "site:aa.com.tr language:turkish");
+		queries.put("ts", "1550213402787");
+		queries.put("sort", "crawled");
+
+		return getNews(queries, 0);
 
 	}
 

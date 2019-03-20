@@ -1,6 +1,8 @@
 package com.clickbait.dataset.news;
 
+import com.clickbait.dataset.config.ConfigurationPropertyApp;
 import com.clickbait.dataset.newscopy.NewsCopyService;
+import com.clickbait.dataset.titleandsite.TitleAndSiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -410,5 +412,48 @@ public class NewsController {
 		}
 		return "islem basarili!";
 	}
+
+	@GetMapping("/euronewscom")
+	@ResponseBody
+	public String getEuronewsComNews() {
+		try {
+			newsService.save(newsService.getEuroNews());
+		}
+		catch (Exception e) {
+			return "islem basarisiz!";
+		}
+		return "islem basarili!";
+	}
+
+
+	@GetMapping("/bbccom")
+	@ResponseBody
+	public String getBbcComNews() {
+		try {
+			newsService.save(newsService.getBbcNews());
+		}
+		catch (Exception e) {
+			return "islem basarisiz!";
+		}
+		return "islem basarili!";
+	}
+
+	@GetMapping("/aacomtr")
+	@ResponseBody
+	public String getAAComTrNews() {
+		try {
+			newsService.save(newsService.getAANews());
+		}
+		catch (Exception e) {
+			return "islem basarisiz!";
+		}
+		return "islem basarili!";
+	}
+
+
+
+
+
+
 
 }
