@@ -1,8 +1,6 @@
 package com.clickbait.dataset.news;
 
-import com.clickbait.dataset.config.ConfigurationPropertyApp;
 import com.clickbait.dataset.newscopy.NewsCopyService;
-import com.clickbait.dataset.titleandsite.TitleAndSiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,30 +25,6 @@ public class NewsController {
 	@ResponseBody
 	public String getHomePage() {
 		return "hello";
-	}
-
-	@GetMapping("/naynco")
-	@ResponseBody
-	public String getNaynCoNews() {
-		try {
-			newsService.save(newsService.getNaynCoNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/evrenselnet")
-	@ResponseBody
-	public String getEvrenselNetNews() {
-		try {
-			newsService.save(newsService.getEvrenselNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
 	}
 
 	@GetMapping("/dikencomtr")
@@ -125,30 +99,6 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
-	@GetMapping("/sabahcomtr")
-	@ResponseBody
-	public String getSabahComTrNews() {
-		try {
-			newsService.save(newsService.getSabahNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/cumhuriyetcomtr")
-	@ResponseBody
-	public String getCumhuriyetComTrNews() {
-		try {
-			newsService.save(newsService.getCumhuriyetNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
 	@GetMapping("/sozcucomtr")
 	@ResponseBody
 	public String getSozcuComTrNews() {
@@ -166,30 +116,6 @@ public class NewsController {
 	public String getT24ComTrNews() {
 		try {
 			newsService.save(newsService.getT24News());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/haberturkcom")
-	@ResponseBody
-	public String getHaberturkComNews() {
-		try {
-			newsService.save(newsService.getHaberturkNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/ntvcomtr")
-	@ResponseBody
-	public String getNtvComTrNews() {
-		try {
-			newsService.save(newsService.getNtvNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -221,35 +147,11 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
-	@GetMapping("/turkiyegazetesicomtr")
-	@ResponseBody
-	public String getTurkiyeGazetesiComTrNews() {
-		try {
-			newsService.save(newsService.getTurkiyeGazetesiNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
 	@GetMapping("/ahabercomtr")
 	@ResponseBody
 	public String getAHaberComTrNews() {
 		try {
 			newsService.save(newsService.getAHaberNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/aksamcomtr")
-	@ResponseBody
-	public String getAksamComTrNews() {
-		try {
-			newsService.save(newsService.getAksamNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -269,59 +171,11 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
-	@GetMapping("/gunescom")
-	@ResponseBody
-	public String getGunesComNews() {
-		try {
-			newsService.save(newsService.getGunesNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
 	@GetMapping("/haber7com")
 	@ResponseBody
 	public String getHaber7ComNews() {
 		try {
 			newsService.save(newsService.getHaber7News());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/ntvspornet")
-	@ResponseBody
-	public String getNtvSporNetNews() {
-		try {
-			newsService.save(newsService.getNtvSporNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/fanatikcomtr")
-	@ResponseBody
-	public String getFanatikComTrNews() {
-		try {
-			newsService.save(newsService.getFanatikNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/abcgazetesicom")
-	@ResponseBody
-	public String getAbcGazetesiComNews() {
-		try {
-			newsService.save(newsService.getAbcGazetesiNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -341,47 +195,11 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
-	@GetMapping("/gercekgundemcom")
-	@ResponseBody
-	public String getGercekGundemComNews() {
-		try {
-			newsService.save(newsService.getGercekGundemNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
 	@GetMapping("/medyatavacom")
 	@ResponseBody
 	public String getMedyaTavaComNews() {
 		try {
 			newsService.save(newsService.getMedyaTavaNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/internethabercom")
-	@ResponseBody
-	public String getInternetHaberComNews() {
-		try {
-			newsService.save(newsService.getInternetHaberNews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-	@GetMapping("/fotomaccomtr")
-	@ResponseBody
-	public String getFotomacComTrNews() {
-		try {
-			newsService.save(newsService.getFotomacNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -425,7 +243,6 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
-
 	@GetMapping("/bbccom")
 	@ResponseBody
 	public String getBbcComNews() {
@@ -437,23 +254,5 @@ public class NewsController {
 		}
 		return "islem basarili!";
 	}
-
-	@GetMapping("/aacomtr")
-	@ResponseBody
-	public String getAAComTrNews() {
-		try {
-			newsService.save(newsService.getAANews());
-		}
-		catch (Exception e) {
-			return "islem basarisiz!";
-		}
-		return "islem basarili!";
-	}
-
-
-
-
-
-
 
 }

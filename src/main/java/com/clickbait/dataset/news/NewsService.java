@@ -70,25 +70,6 @@ class NewsService {
 		return newsList;
 	}
 
-	List<News> getNaynCoNews() {
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:nayn.co");
-		queries.put("ts", "1549366056522");
-		queries.put("sort", "published");
-		return getNews(queries, 0);
-	}
-
-	List<News> getEvrenselNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:evrensel.net");
-		queries.put("ts", "1549371978281");
-		queries.put("sort", "published");
-
-		return getNews(queries, 0);
-
-	}
-
 	List<News> getDikenNews() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -155,28 +136,6 @@ class NewsService {
 
 	}
 
-	List<News> getSabahNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:sabah.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getCumhuriyetNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:cumhuriyet.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
 	List<News> getSozcuNews() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -192,28 +151,6 @@ class NewsService {
 
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:t24.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getHaberturkNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:haberturk.com language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getNtvNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:ntv.com.tr language:turkish has_video:false site_type:news thread.country:TR");
 		queries.put("ts", "1549437944172");
 		queries.put("sort", "domain_rank");
 
@@ -243,32 +180,10 @@ class NewsService {
 
 	}
 
-	List<News> getTurkiyeGazetesiNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:turkiyegazetesi.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
 	List<News> getAHaberNews() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:ahaber.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getAksamNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:aksam.com.tr language:turkish has_video:false site_type:news thread.country:TR");
 		queries.put("ts", "1549437944172");
 		queries.put("sort", "domain_rank");
 
@@ -284,51 +199,10 @@ class NewsService {
 		return getNews(queries, null);
 	}
 
-	List<News> getGunesNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:gunes.com language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
 	List<News> getHaber7News() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:haber7.com language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getNtvSporNews() {
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:ntvspor.net");
-		queries.put("ts", "1549366056522");
-		queries.put("sort", "published");
-		return getNews(queries, 0);
-	}
-
-	List<News> getFanatikNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:fanatik.com.tr language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getAbcGazetesiNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:abcgazetesi.com");
 		queries.put("ts", "1549437944172");
 		queries.put("sort", "domain_rank");
 
@@ -347,43 +221,10 @@ class NewsService {
 
 	}
 
-	List<News> getGercekGundemNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:gercekgundem.com");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
 	List<News> getMedyaTavaNews() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:medyatava.com language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getInternetHaberNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:internethaber.com language:turkish has_video:false site_type:news thread.country:TR");
-		queries.put("ts", "1549437944172");
-		queries.put("sort", "domain_rank");
-
-		return getNews(queries, null);
-
-	}
-
-	List<News> getFotomacNews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:fotomac.com.tr language:turkish has_video:false site_type:news thread.country:TR");
 		queries.put("ts", "1549437944172");
 		queries.put("sort", "domain_rank");
 
@@ -418,17 +259,6 @@ class NewsService {
 		final Map<String, String> queries = new HashMap<String, String>();
 		queries.put("q", "site:bbc.com language:turkish");
 		queries.put("ts", "1550062269550");
-		queries.put("sort", "crawled");
-
-		return getNews(queries, 0);
-
-	}
-
-	List<News> getAANews() {
-
-		final Map<String, String> queries = new HashMap<String, String>();
-		queries.put("q", "site:aa.com.tr language:turkish");
-		queries.put("ts", "1550213402787");
 		queries.put("sort", "crawled");
 
 		return getNews(queries, 0);
