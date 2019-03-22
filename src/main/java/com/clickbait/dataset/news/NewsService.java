@@ -77,7 +77,7 @@ class NewsService {
 		queries.put("ts", "1549379993842");
 		queries.put("sort", "published");
 
-		return getNews(queries, 0);
+		return getNews(queries, null);
 
 	}
 
@@ -243,6 +243,17 @@ class NewsService {
 
 	}
 
+	List<News> getSabahNews() {
+
+		final Map<String, String> queries = new HashMap<String, String>();
+		queries.put("q", "site:sabah.com.tr");
+		queries.put("ts", "1549437944172");
+		queries.put("sort", "domain_rank");
+
+		return getNews(queries, null);
+
+	}
+
 	List<News> getEuroNews() {
 
 		final Map<String, String> queries = new HashMap<String, String>();
@@ -250,7 +261,7 @@ class NewsService {
 		queries.put("ts", "1550062269550");
 		queries.put("sort", "crawled");
 
-		return getNews(queries, 0);
+		return getNews(queries, null);
 
 	}
 
@@ -261,7 +272,7 @@ class NewsService {
 		queries.put("ts", "1550062269550");
 		queries.put("sort", "crawled");
 
-		return getNews(queries, 0);
+		return getNews(queries, null);
 
 	}
 

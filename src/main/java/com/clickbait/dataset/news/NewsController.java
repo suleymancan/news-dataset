@@ -219,6 +219,18 @@ public class NewsController {
 		return "islem basarili!";
 	}
 
+	@GetMapping("/sabahcomtr")
+	@ResponseBody
+	public String getSabahComTrNews() {
+		try {
+			newsService.save(newsService.getSabahNews());
+		}
+		catch (Exception e) {
+			return "islem basarisiz!";
+		}
+		return "islem basarili!";
+	}
+
 	@GetMapping("/newscopy")
 	@ResponseBody
 	public String saveNewsCopy() {
