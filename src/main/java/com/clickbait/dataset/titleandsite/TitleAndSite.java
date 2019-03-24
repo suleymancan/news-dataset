@@ -1,5 +1,6 @@
 package com.clickbait.dataset.titleandsite;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
  * @author suleymancan
  */
 @Entity
+@Getter
 @NoArgsConstructor
 public class TitleAndSite {
 
@@ -24,6 +26,7 @@ public class TitleAndSite {
 	private String site;
 
 	// 0: non-clickbait, 1: clickbait
+	// TODO: 24.03.2019 : it is more appropriate that the variable type is boolean.
 	private Integer clickbait;
 
 	TitleAndSite(String title, String site, Integer clickbait) {

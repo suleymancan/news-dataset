@@ -277,7 +277,7 @@ public class NewsController {
 
 	@GetMapping("/copy")
 	@ResponseBody
-	public String getCopyNewsToTitleAndSite(){
+	public String convertNewsToTitleAndSite(){
 		try{
 			final List<News> news = newsService.findAll();
 			titleAndSiteService.saveAll(titleAndSiteService.convertNewsToTitleAndSite(news));

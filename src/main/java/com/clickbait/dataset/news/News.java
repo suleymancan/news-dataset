@@ -42,6 +42,7 @@ public class News {
 	private String published;
 
 	// 0: non-clickbait, 1: clickbait
+	// TODO: 24.03.2019 : it is more appropriate that the variable type is boolean. 
 	private Integer clickbait;
 
 }

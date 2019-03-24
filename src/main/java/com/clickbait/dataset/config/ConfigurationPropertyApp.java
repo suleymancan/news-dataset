@@ -23,4 +23,6 @@ public class ConfigurationPropertyApp {
 	private String evrensel;
 
 	private String dokuzsekiz;
+
+	private String txtPath;
 }

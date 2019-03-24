@@ -28,6 +28,14 @@ public class TitleAndSiteService {
 		titleAndSiteRepository.saveAll(titleAndSites);
 	}
 
+	public List<TitleAndSite> findAll(){
+		return (List<TitleAndSite>) titleAndSiteRepository.findAll();
+	}
+
+	public List<String> findAllTitleByClickbait(Integer clickbait){
+		return titleAndSiteRepository.findAllTitleByClickbait(clickbait);
+	}
+
 	public List<String> readTxt(String path){
 		List<String> newsList = new ArrayList<>();
 		try{
