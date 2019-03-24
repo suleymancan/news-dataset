@@ -1,11 +1,15 @@
 package com.clickbait.dataset.news;
 
+import com.clickbait.dataset.newscopy.NewsCopy;
 import com.clickbait.dataset.newscopy.NewsCopyService;
+import com.clickbait.dataset.titleandsite.TitleAndSiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created on March, 2019
@@ -21,6 +25,8 @@ public class NewsController {
 
 	private final NewsCopyService newsCopyService;
 
+	private final TitleAndSiteService titleAndSiteService;
+
 	@GetMapping
 	@ResponseBody
 	public String getHomePage() {
@@ -31,7 +37,7 @@ public class NewsController {
 	@ResponseBody
 	public String getDikenComTrNews() {
 		try {
-			newsService.save(newsService.getDikenNews());
+			newsService.saveAll(newsService.getDikenNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -43,7 +49,7 @@ public class NewsController {
 	@ResponseBody
 	public String getYeniSafakComNews() {
 		try {
-			newsService.save(newsService.getYeniSafakNews());
+			newsService.saveAll(newsService.getYeniSafakNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -55,7 +61,7 @@ public class NewsController {
 	@ResponseBody
 	public String getTrtHaberComNews() {
 		try {
-			newsService.save(newsService.getTrtHaberNews());
+			newsService.saveAll(newsService.getTrtHaberNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -67,7 +73,7 @@ public class NewsController {
 	@ResponseBody
 	public String getCnnTurkComNews() {
 		try {
-			newsService.save(newsService.getCnnTurkNews());
+			newsService.saveAll(newsService.getCnnTurkNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -79,7 +85,7 @@ public class NewsController {
 	@ResponseBody
 	public String getHurriyetComTrNews() {
 		try {
-			newsService.save(newsService.getHurriyetNews());
+			newsService.saveAll(newsService.getHurriyetNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -91,7 +97,7 @@ public class NewsController {
 	@ResponseBody
 	public String getMillyetComTrNews() {
 		try {
-			newsService.save(newsService.getMilliyetNews());
+			newsService.saveAll(newsService.getMilliyetNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -103,7 +109,7 @@ public class NewsController {
 	@ResponseBody
 	public String getSozcuComTrNews() {
 		try {
-			newsService.save(newsService.getSozcuNews());
+			newsService.saveAll(newsService.getSozcuNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -115,7 +121,7 @@ public class NewsController {
 	@ResponseBody
 	public String getT24ComTrNews() {
 		try {
-			newsService.save(newsService.getT24News());
+			newsService.saveAll(newsService.getT24News());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -127,7 +133,7 @@ public class NewsController {
 	@ResponseBody
 	public String getPostaComTrNews() {
 		try {
-			newsService.save(newsService.getPostaNews());
+			newsService.saveAll(newsService.getPostaNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -139,7 +145,7 @@ public class NewsController {
 	@ResponseBody
 	public String getTgrtHaberComTrNews() {
 		try {
-			newsService.save(newsService.getTgrtHaberNews());
+			newsService.saveAll(newsService.getTgrtHaberNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -151,7 +157,7 @@ public class NewsController {
 	@ResponseBody
 	public String getAHaberComTrNews() {
 		try {
-			newsService.save(newsService.getAHaberNews());
+			newsService.saveAll(newsService.getAHaberNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -163,7 +169,7 @@ public class NewsController {
 	@ResponseBody
 	public String getBirgunNetNews() {
 		try {
-			newsService.save(newsService.getBirgunNews());
+			newsService.saveAll(newsService.getBirgunNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -175,7 +181,7 @@ public class NewsController {
 	@ResponseBody
 	public String getHaber7ComNews() {
 		try {
-			newsService.save(newsService.getHaber7News());
+			newsService.saveAll(newsService.getHaber7News());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -187,7 +193,7 @@ public class NewsController {
 	@ResponseBody
 	public String getOdaTvComNews() {
 		try {
-			newsService.save(newsService.getOdaTvNews());
+			newsService.saveAll(newsService.getOdaTvNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -199,7 +205,7 @@ public class NewsController {
 	@ResponseBody
 	public String getMedyaTavaComNews() {
 		try {
-			newsService.save(newsService.getMedyaTavaNews());
+			newsService.saveAll(newsService.getMedyaTavaNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -211,7 +217,7 @@ public class NewsController {
 	@ResponseBody
 	public String getTakvimComTrNews() {
 		try {
-			newsService.save(newsService.getTakvimNews());
+			newsService.saveAll(newsService.getTakvimNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -223,7 +229,7 @@ public class NewsController {
 	@ResponseBody
 	public String getSabahComTrNews() {
 		try {
-			newsService.save(newsService.getSabahNews());
+			newsService.saveAll(newsService.getSabahNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -235,7 +241,9 @@ public class NewsController {
 	@ResponseBody
 	public String saveNewsCopy() {
 		try {
-			newsCopyService.saveNewsCopy(newsService.findAll());
+			final List<News> newsList = newsService.findAll();
+			final List<NewsCopy> newsCopyList = newsCopyService.saveNewsCopy(newsList);
+			newsCopyService.saveAll(newsCopyList);
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -247,7 +255,7 @@ public class NewsController {
 	@ResponseBody
 	public String getEuronewsComNews() {
 		try {
-			newsService.save(newsService.getEuroNews());
+			newsService.saveAll(newsService.getEuroNews());
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -259,7 +267,20 @@ public class NewsController {
 	@ResponseBody
 	public String getBbcComNews() {
 		try {
-			newsService.save(newsService.getBbcNews());
+			newsService.saveAll(newsService.getBbcNews());
+		}
+		catch (Exception e) {
+			return "islem basarisiz!";
+		}
+		return "islem basarili!";
+	}
+
+	@GetMapping("/copy")
+	@ResponseBody
+	public String getCopyNewsToTitleAndSite(){
+		try{
+			final List<News> news = newsService.findAll();
+			titleAndSiteService.saveAll(titleAndSiteService.convertNewsToTitleAndSite(news));
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";

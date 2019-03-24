@@ -4,6 +4,7 @@ import com.clickbait.dataset.news.News;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,8 +22,12 @@ public class NewsCopyService {
 		newsCopyRepository.save(newsCopy);
 	}
 
-	public void saveNewsCopy(List<News> newsList) {
+	public void saveAll(List<NewsCopy> newsCopyList){
+		newsCopyRepository.saveAll(newsCopyList);
+	}
 
+	public List<NewsCopy> saveNewsCopy(List<News> newsList) {
+	final List<NewsCopy> newsCopyList = new ArrayList<>();
 		newsList.forEach((news) -> {
 			//@formatter:off
 			final NewsCopy newsCopy = NewsCopy.builder()
@@ -35,9 +40,10 @@ public class NewsCopyService {
 					.clickbait(news.getClickbait())
 					.build();
 			//@formatter:on
-			this.save(newsCopy);
-		});
+			newsCopyList.add(newsCopy);
 
+		});
+	return  newsCopyList;
 	}
 
 }

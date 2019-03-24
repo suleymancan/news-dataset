@@ -29,8 +29,8 @@ class NewsService {
 
 	private final ConfigurationPropertyApp configurationPropertyApp;
 
-	void save(final List<News> newsList) {
-		newsList.forEach((news) -> newsRepository.save(news));
+	void saveAll(final List<News> newsList) {
+		newsRepository.saveAll(newsList);
 	}
 
 	private List<News> getNews(Map<String, String> queries, Integer clickbait) {
@@ -279,5 +279,7 @@ class NewsService {
 	List<News> findAll() {
 		return (List<News>) newsRepository.findAll();
 	}
+
+
 
 }

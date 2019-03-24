@@ -1,12 +1,15 @@
 package com.clickbait.dataset.news;
 
 import com.clickbait.dataset.config.ConfigurationPropertyApp;
+import com.clickbait.dataset.titleandsite.TitleAndSite;
 import com.clickbait.dataset.titleandsite.TitleAndSiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created on March, 2019
@@ -29,7 +32,9 @@ public class NewsTitleTextController {
 	@ResponseBody
 	public String getNaynCoTxt(){
 		try {
-			titleAndSiteService.save(titleAndSiteService.readTxt(configurationPropertyApp.getNaynCo()), "nayn.co");
+			final List<String> titleList = titleAndSiteService.readTxt(configurationPropertyApp.getNaynCo());
+			final List<TitleAndSite> titleAndSiteList = titleAndSiteService.save(titleList, "nayn.co");
+			titleAndSiteService.saveAll(titleAndSiteList);
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -41,7 +46,9 @@ public class NewsTitleTextController {
 	@ResponseBody
 	public String getEvrenselTxt(){
 		try {
-			titleAndSiteService.save(titleAndSiteService.readTxt(configurationPropertyApp.getEvrensel()), "evrensel.net");
+			final List<String> titleList = titleAndSiteService.readTxt(configurationPropertyApp.getEvrensel());
+			final List<TitleAndSite> titleAndSiteList = titleAndSiteService.save(titleList, "evrensel.net");
+			titleAndSiteService.saveAll(titleAndSiteList);
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
@@ -54,7 +61,9 @@ public class NewsTitleTextController {
 	@ResponseBody
 	public String getDokuzSekizTxt(){
 		try {
-			titleAndSiteService.save(titleAndSiteService.readTxt(configurationPropertyApp.getDokuzsekiz()), "dokuz8haber.net");
+			final List<String> titleList = titleAndSiteService.readTxt(configurationPropertyApp.getDokuzsekiz());
+			final List<TitleAndSite> titleAndSiteList = titleAndSiteService.save(titleList, "dokuz8haber.net");
+			titleAndSiteService.saveAll(titleAndSiteList);
 		}
 		catch (Exception e) {
 			return "islem basarisiz!";
