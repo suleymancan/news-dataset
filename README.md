@@ -4,6 +4,9 @@ This repository creates the dataset of the extension.
 
 
 [Webhose.io API](https://github.com/Webhose/webhoseio-java-sdk) veri toplamak için kullanılmıştır.
+webhose.io adresinde, API Playground sekmesinde, filtreler ekleyerek belirli tarih aralığında istediğimiz kaynağın verilerine ulaşabiliriz.
+Eklenen filtrelerin API sorgu karşılıklarına aynı sayfanın alt kısmında 'Integrate' başlığından erişilebilir.
+Aşağıda API'ın program aracılığı ile kullanımının örneği verilmiştir:
 
 NewsController:
 ```java
@@ -28,7 +31,7 @@ NewsService:
 	}
 ```
 #### NewsService getNews metodu: 
-Webhose, sorgu mapi (queries) ve haberlerin clickbait durumunu (null) alır. Webhose aracılığıyla sorgu yapar.
+getNews metodu sorgu mapi (queries) ve haberlerin clickbait durumunu (null) parametre olarak alır. Webhose aracılığıyla sorgu yapar.
 Sorgu sonucu donen verileri listeye koyar. WebhoseIOClient sınıfında küçük bir hata tespit ettim. Bu hata 100'den fazla haberin gelmesini engelliyordu. WebhoseIOClient getNext() metodunu güncelledim.
 #### WebhoseIOClient getNext()
  ```java
@@ -51,12 +54,12 @@ Web kazıma hakkındaki detayları YemiYemeWebScraping.ipynb notebook dosyasınd
 Web kazıma işleminde elde ettiğim verileri metin belgesinden okudum ve veritabanına kaydettim.(detay: NewsTitleTextController)
 
 #### preprocessing package:
-Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını denedim. Her iki program da sınıfın adının klasör adı ve verilerin txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
+Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını denedim. Her iki program da veri setinde sınıf adının klasör adı ve verilerin klasör içinde txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
 Webhose'dan çektiğim  veriler arasında tekrarlı olanlar vardı. Tekrarlı verileri veritabanında sorgularla sildim.
 
-###As a result  
+### Sonuç olarak:
 Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini temizledim. Web kazıma işleminden 13.000'den fazla veri(resources/static/newstitle) çektim. Haber başlığı olmayanları sildim.
-Web kazıma başlıklarımı 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
+Web kazıma ile elde ettiğim haber başlıklarını 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
 
 dataset:<br/>
 Clicbait haber başlığı: 10,030 <br/>
