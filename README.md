@@ -62,7 +62,7 @@ I tried to get news from sources in the [clickbait report](https://dogrula.org/w
 
 dataset:<br/>
 Clicbait News title: 10,030 <br/>
-Not Clickbait News Sitle 10,006
+Not Clickbait News title: 10,006
 
 I've marked the headlines from my web scraping as 'not clickbait'. By reading the rest of the data, I marked it manually as 'clickbait' or 'not clickbait'.
 
