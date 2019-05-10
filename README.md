@@ -27,9 +27,9 @@ NewsService:
 		return this.getNews(queries, null);
 	}
 ```
-#### NewsService getNews method: 
-Webhose, sorgu mapi (queries) ve haberlerin clickbait durumunu (null) alır. Webhose İstemcisi aracılığıyla sorgu yapar.
-Sorgu sonucunu liste olarak döndürür. WebhoseIOClient sınıfında küçük bir hata tespit ettim. Bu hata 100'den fazla haberin gelmesini engelliyordu. WebhoseIOClient getNext() metodunu güncelledim.
+#### NewsService getNews metodu: 
+Webhose, sorgu mapi (queries) ve haberlerin clickbait durumunu (null) alır. Webhose aracılığıyla sorgu yapar.
+Sorgu sonucu donen verileri listeye koyar. WebhoseIOClient sınıfında küçük bir hata tespit ettim. Bu hata 100'den fazla haberin gelmesini engelliyordu. WebhoseIOClient getNext() metodunu güncelledim.
 #### WebhoseIOClient getNext()
  ```java
  public JsonElement getNext() throws IOException, URISyntaxException {
@@ -48,7 +48,7 @@ Webhose aracılığıyla haberler hakkında detaylı bilgiler çektim. (site, ti
 Clickbait tespitinde sadece haber başlığı ile çalışmaya karar verdim.
 
 Web kazıma hakkındaki detayları YemiYemeWebScraping.ipynb notebook dosyasından inceleyebilirsiniz.
-Web kazıma işleminde elde ettiğim kayıtları metin belgesinden okudum ve veritabanına kaydettim.(details: NewsTitleTextController)
+Web kazıma işleminde elde ettiğim verileri metin belgesinden okudum ve veritabanına kaydettim.(detay: NewsTitleTextController)
 
 #### preprocessing package:
 Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını denedim. Her iki program da sınıfın adının klasör adı ve verilerin txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
@@ -56,12 +56,12 @@ Webhose'dan çektiğim  veriler arasında tekrarlı olanlar vardı. Tekrarlı ve
 
 ###As a result  
 Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini temizledim. Web kazıma işleminden 13.000'den fazla veri(resources/static/newstitle) çektim. Haber başlığı olmayanları sildim.
+Web kazıma başlıklarımı 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
 
 dataset:<br/>
 Clicbait haber başlığı: 10,030 <br/>
 Not Clickbait haber başlığı 10,006
 
-Web kazıma başlıklarımı 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
 #### news dataset resources:
 http://webhose.io/ <br/>
 https://github.com/brodriguezmilla/WebScrapingCFCBS4
