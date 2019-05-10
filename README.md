@@ -29,7 +29,7 @@ NewsService:
 #### NewsService getNews method: 
 Webhose query map and gets clickbait status of news. Makes query through Webhose Client.
 Returns the query result as a list. I've detected a minor error in the WebhoseIOClient class. This error prevented more than 100 news stories coming. I have updated WebhoseIOClient the method.
-#### NebhoseIOClient getNext()
+#### WebhoseIOClient getNext()
  ```java
  public JsonElement getNext() throws IOException, URISyntaxException {
  		try {
