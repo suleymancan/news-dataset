@@ -69,7 +69,7 @@ Veriseti:<br/>
 Clicbait haber başlığı: 10.030 <br/>
 Clickbait olmayan haber başlığı: 10.006
 
-Haber Kaynağı:
+Haber Kaynağı: <br/>
 ![Haber Kaynağı](https://suleymancanblog.files.wordpress.com/2019/05/habersayisi.png)
 
 #### news dataset resources:
