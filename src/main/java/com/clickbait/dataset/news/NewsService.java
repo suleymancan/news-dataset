@@ -1,6 +1,7 @@
 package com.clickbait.dataset.news;
 
 import com.clickbait.dataset.config.ConfigurationPropertyApp;
+import com.clickbait.dataset.webhose.WebhoseIOClient;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -23,7 +24,7 @@ import java.util.Map;
 @Service
 @AllArgsConstructor
 @Slf4j
-class NewsService {
+public class NewsService {
 
 	private final NewsRepository newsRepository;
 
@@ -272,11 +273,11 @@ class NewsService {
 		queries.put("ts", "1550062269550");
 		queries.put("sort", "crawled");
 
-		return getNews(queries, null);
+		return this.getNews(queries, null);
 
 	}
 
-	List<News> findAll() {
+	public List<News> findAll() {
 		return (List<News>) newsRepository.findAll();
 	}
 

@@ -1,4 +1,4 @@
-package com.clickbait.dataset.news;
+package com.clickbait.dataset.webhose;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;

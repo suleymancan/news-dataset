@@ -29,20 +29,22 @@ public class News {
 	@Column(length = 1000)
 	private String site;
 
-	@Column(columnDefinition="text", length=10485760)
+	@Column(columnDefinition = "text", length = 10485760)
 	private String title;
 
-	@Column(columnDefinition="text", length=10485760)
+	@Column(columnDefinition = "text", length = 10485760)
 	private String text;
+
 	@Column(length = 1000)
 	private String url;
+
 	@Column(length = 1000)
 	private String mainImage;
+
 	@Column(length = 1000)
 	private String published;
 
 	// 0: non-clickbait, 1: clickbait
-	// TODO: 24.03.2019 : it is more appropriate that the variable type is boolean. 
 	private Integer clickbait;
 
 }

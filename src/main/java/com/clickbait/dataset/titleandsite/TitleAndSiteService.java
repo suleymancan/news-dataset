@@ -20,22 +20,17 @@ public class TitleAndSiteService {
 
 	private final TitleAndSiteRepository titleAndSiteRepository;
 
-	private void save(TitleAndSite titleAndSite){
-		 titleAndSiteRepository.save(titleAndSite);
-	}
 
 	public void saveAll(List<TitleAndSite> titleAndSites){
 		titleAndSiteRepository.saveAll(titleAndSites);
 	}
 
-	public List<TitleAndSite> findAll(){
-		return (List<TitleAndSite>) titleAndSiteRepository.findAll();
-	}
 
 	public List<String> findAllTitleByClickbait(Integer clickbait){
 		return titleAndSiteRepository.findAllTitleByClickbait(clickbait);
 	}
 
+	// txt dosyadaki verileri okuma.
 	public List<String> readTxt(String path){
 		List<String> newsList = new ArrayList<>();
 		try{
@@ -51,6 +46,7 @@ public class TitleAndSiteService {
 		return newsList;
 	}
 
+	// txt dosyadaki haberleri veritabanina kaydetme.
 	public List<TitleAndSite> save(List<String> titleList, String site){
 		List<TitleAndSite> titleAndSiteList = new ArrayList<>();
 		titleList.forEach(title -> {
@@ -60,6 +56,7 @@ public class TitleAndSiteService {
 		return titleAndSiteList;
 	}
 
+	// Haberlerin sadece site ve isimlerini alma.
 	public List<TitleAndSite> convertNewsToTitleAndSite(List<News> newsList){
 		final List<TitleAndSite> titleAndSiteList = new ArrayList<>();
 		newsList.forEach((news -> {

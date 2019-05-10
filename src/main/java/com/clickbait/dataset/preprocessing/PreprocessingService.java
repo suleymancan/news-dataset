@@ -1,7 +1,6 @@
 package com.clickbait.dataset.preprocessing;
 
 import com.clickbait.dataset.config.ConfigurationPropertyApp;
-import com.clickbait.dataset.titleandsite.TitleAndSiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +18,6 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class PreprocessingService {
-
-	private final TitleAndSiteService titleAndSiteService;
 
 	private final ConfigurationPropertyApp configurationPropertyApp;
 
