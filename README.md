@@ -70,9 +70,7 @@ Clicbait haber başlığı: 10.030 <br/>
 Clickbait olmayan haber başlığı: 10.006
 
 Haber Kaynağı:
-![alt text][logo]
-
-[logo]: https://github.com/suleymancan/yemi-yeme-dataset/tree/master/src/main/resources/static/habersayisi.png "Haber kaynağı"
+![Haber Kaynağı](https://github.com/suleymancan/yemi-yeme-dataset/tree/master/src/main/resources/static/habersayisi.png)
 
 
 #### news dataset resources:
