@@ -57,7 +57,7 @@ I tried [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) and [prizma](https://
 The data from Webhose may be the same. I destroyed these copies with SQL queries in the database.
 
 
-###As a result  
+### As a result  
 I tried to get news from sources in the [clickbait report](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) published by dogrula.org. Through Webhose.io I got over 70,000 news. I've cleared recurring news data. I received more than 13,000 data(resources/static/newstitle) from the web scraping process. I erased non-news data.
 
 dataset:<br/>
