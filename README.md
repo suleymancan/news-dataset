@@ -51,16 +51,17 @@ Webhose aracılığıyla haberler hakkında detaylı bilgiler çektim. (site, ti
 Clickbait tespitinde sadece haber başlığı ile çalışmaya karar verdim.
 
 Web kazıma hakkındaki detayları YemiYemeWebScraping.ipynb notebook dosyasından inceleyebilirsiniz.
-Web kazıma işleminde elde ettiğim verileri metin belgesinden okudum ve veritabanına kaydettim.(detay: NewsTitleTextController)
+Web kazıma işleminde elde ettiğim verileri metin belgesinden okudum ve veritabanına kaydettim. (detay: NewsTitleTextController)
 
 #### preprocessing package:
 Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını denedim. Her iki program da veri setinde sınıf adının klasör adı ve verilerin klasör içinde txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
-Webhose'dan çektiğim  veriler arasında tekrarlı olanlar vardı. Tekrarlı verileri veritabanında sorgularla sildim.
+
 
 ### Sonuç olarak:
-Buradaki clickbait veya not clickbait işaretlemeleri tamamen benim gözlemlerime dayanmaktadır. 
-Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini temizledim. Web kazıma işleminden 13.000'den fazla veri(resources/static/newstitle) çektim. Haber başlığı olmayanları sildim.
-Web kazımada kullandığım haber kaynakları (nayn.co, evrensel ve dokuz8haber) clickbait olayına bulaşmayan sitelerdir. Web kazıma ile elde ettiğim haber başlıklarının hepsini veritabanında 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
+20.000 haber başlığı ile çalışma hedefim vardı. Bazı kaynaklardan gelen haber başlığı verilerini detaylı incelemeden 'clickbait değil' olarak sınıflandırarak hedefime ulaştım.
+Verisetindeki clickbait veya clickbait değil sınıflandırmaları tamamen gözlemlerime dayanmaktadır. 
+Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini veritabanında sildim. Web kazıma işleminden 13.000'den fazla veri (resources/static/newstitle adresinden incelenebilir) çektim. Haber başlığı olmayanları veritabanından sildim.
+Web kazımada kullandığım nayn.co, evrensel ve dokuz8haber clickbait olayına bulaşmayan sitelerdir. Web kazıma ile elde ettiğim haber başlıklarının hepsini veritabanında 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
 
 
 dataset:<br/>
