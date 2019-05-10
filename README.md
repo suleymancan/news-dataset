@@ -58,12 +58,15 @@ Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http:/
 Webhose'dan çektiğim  veriler arasında tekrarlı olanlar vardı. Tekrarlı verileri veritabanında sorgularla sildim.
 
 ### Sonuç olarak:
+Buradaki clickbait veya not clickbait işaretlemeleri tamamen benim gözlemlerime dayanmaktadır. 
 Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini temizledim. Web kazıma işleminden 13.000'den fazla veri(resources/static/newstitle) çektim. Haber başlığı olmayanları sildim.
-Web kazıma ile elde ettiğim haber başlıklarını 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
+Web kazımada kullandığım haber kaynakları (nayn.co, evrensel ve dokuz8haber) clickbait olayına bulaşmayan sitelerdir. Web kazıma ile elde ettiğim haber başlıklarının hepsini veritabanında 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
+
 
 dataset:<br/>
-Clicbait haber başlığı: 10,030 <br/>
-Not Clickbait haber başlığı 10,006
+Clicbait haber başlığı: 10.030 <br/>
+Clickbait olmayan haber başlığı 10.006
+
 
 #### news dataset resources:
 http://webhose.io/ <br/>
