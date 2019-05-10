@@ -41,10 +41,10 @@ Returns the query result as a list. I've detected a minor error in the WebhoseIO
  		return null;
  	}
 ```
-### news package:
+#### news package:
 Through Webhose I received a variety of information about a news item. 
 
-### titleandsite package:
+#### titleandsite package:
 I decided to work only on the title and site name of the detailed news data.
 
 You can examine the details of web scraping in YemiYemeWebScraping.ipynb file.
