@@ -3,7 +3,7 @@ Clickbait detection extension for Turkish news on social media: [Yemi Yeme](http
 This repository creates the dataset of the extension. 
 
 
-[Webhose.io API](https://github.com/Webhose/webhoseio-java-sdk) was used to collect data.
+[Webhose.io API](https://github.com/Webhose/webhoseio-java-sdk) veri toplamak için kullanılmıştır.
 
 NewsController:
 ```java
@@ -28,8 +28,8 @@ NewsService:
 	}
 ```
 #### NewsService getNews method: 
-Webhose query map and gets clickbait status of news. Makes query through Webhose Client.
-Returns the query result as a list. I've detected a minor error in the WebhoseIOClient class. This error prevented more than 100 news stories coming. I have updated WebhoseIOClient the method.
+Webhose, sorgu mapi (queries) ve haberlerin clickbait durumunu (null) alır. Webhose İstemcisi aracılığıyla sorgu yapar.
+Sorgu sonucunu liste olarak döndürür. WebhoseIOClient sınıfında küçük bir hata tespit ettim. Bu hata 100'den fazla haberin gelmesini engelliyordu. WebhoseIOClient getNext() metodunu güncelledim.
 #### WebhoseIOClient getNext()
  ```java
  public JsonElement getNext() throws IOException, URISyntaxException {
@@ -43,29 +43,25 @@ Returns the query result as a list. I've detected a minor error in the WebhoseIO
  	}
 ```
 #### news package:
-Through Webhose I received a variety of information about a news item. 
-
+Webhose aracılığıyla haberler hakkında detaylı bilgiler çektim. (site, title, text, url, mainImage, published)
 #### titleandsite package:
-I decided to work only on the title and site name of the detailed news data.
+Clickbait tespitinde sadece haber başlığı ile çalışmaya karar verdim.
 
-You can examine the details of web scraping in YemiYemeWebScraping.ipynb file.
-I read the records obtained in the web scraping process and saved the database. (details: NewsTitleTextController)
+Web kazıma hakkındaki detayları YemiYemeWebScraping.ipynb notebook dosyasından inceleyebilirsiniz.
+Web kazıma işleminde elde ettiğim kayıtları metin belgesinden okudum ve veritabanına kaydettim.(details: NewsTitleTextController)
 
 #### preprocessing package:
-I tried [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) and [prizma](https://code.google.com/archive/p/prizma-text-classification/) for feature extraction for machine learning. Both programs want the name of the class to be in the folder name and the txt file in the folder. I've done these things in this package.
-
-The data from Webhose may be the same. I destroyed these copies with SQL queries in the database.
-
+Makine öğrenmesi uygulamasında özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını denedim. Her iki program da sınıfın adının klasör adı ve verilerin txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
+Webhose'dan çektiğim  veriler arasında tekrarlı olanlar vardı. Tekrarlı verileri veritabanında sorgularla sildim.
 
 ###As a result  
-I tried to get news from sources in the [clickbait report](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) published by dogrula.org. Through Webhose.io I got over 70,000 news. I've cleared recurring news data. I received more than 13,000 data(resources/static/newstitle) from the web scraping process. I erased non-news data.
+Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini temizledim. Web kazıma işleminden 13.000'den fazla veri(resources/static/newstitle) çektim. Haber başlığı olmayanları sildim.
 
 dataset:<br/>
-Clicbait News title: 10,030 <br/>
-Not Clickbait News Sitle 10,006
+Clicbait haber başlığı: 10,030 <br/>
+Not Clickbait haber başlığı 10,006
 
-I've marked the headlines from my web scraping as 'not clickbait'. By reading the rest of the data, I marked it manually as 'clickbait' or 'not clickbait'.
-
+Web kazıma başlıklarımı 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
 #### news dataset resources:
 http://webhose.io/ <br/>
 https://github.com/brodriguezmilla/WebScrapingCFCBS4
