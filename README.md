@@ -2,7 +2,7 @@
 Clickbait detection extension for Turkish news on social media: [Yemi Yeme](https://github.com/suleymancan/yemi-yeme).
 This repository creates the dataset of the extension. 
 
-###Dataset Download:
+### Dataset Download: <br/>
 [70000+ Turkish News](https://www.kaggle.com/suleymancan/turkishnews70000)<br/>
 [20000+ Turkish  News Title Clickbait Classified](https://www.kaggle.com/suleymancan/turkishnewstitle20000clickbaitclassified)
 
