@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/dataset
+    url: jdbc:postgresql://localhost:5432/dataset-test
     username: postgres
     password: postgres
 
@@ -16,7 +16,7 @@ spring:
           format_sql: true
 
 app:
-  api-key: c92dcd54-eca5-4e21-974d-6379996bd3e5
+  api-key: a640f793-5179-4220-badb-0bd9951dae50
   nayn-co: /newstitle/naynco
   evrensel: /newstitle/evrensel
   dokuz-sekiz: /newstitle/dokuzsekiz

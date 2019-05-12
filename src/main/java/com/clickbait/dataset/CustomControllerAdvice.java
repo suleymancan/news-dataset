@@ -15,8 +15,8 @@ public class CustomControllerAdvice {
 
 
 	@ExceptionHandler(Exception.class)
-	public String handleException(Exception e) {
+	public String handleException(Exception e) throws Exception {
 		log.info(e.getMessage(), e);
-		return "fail!";
+		throw e;
 	}
 }
