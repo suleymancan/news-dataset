@@ -2,7 +2,11 @@
 Clickbait detection extension for Turkish news on social media: [Yemi Yeme](https://github.com/suleymancan/yemi-yeme).
 This repository creates the dataset of the extension. 
 
+###Dataset Download:
+[70000+ Turkish News](https://www.kaggle.com/suleymancan/turkishnews70000)<br/>
+[20000+ Turkish  News Title Clickbait Classified](https://www.kaggle.com/suleymancan/turkishnewstitle20000clickbaitclassified)
 
+<hr>
 [Webhose.io API](https://github.com/Webhose/webhoseio-java-sdk) veri toplamak için kullanılmıştır.
 webhose.io adresinde, API Playground sekmesinde, filtreler ekleyerek belirli tarih aralığında istediğimiz kaynağın verilerine ulaşabiliriz.
 Eklenen filtrelerin API sorgu parametrelerine aynı sayfanın alt kısmında 'Integrate' başlığından erişilebilir.
