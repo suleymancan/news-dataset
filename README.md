@@ -9,7 +9,7 @@ This repository creates the dataset of the extension.
 <hr>
 
 [Webhose.io API](https://github.com/Webhose/webhoseio-java-sdk) veri toplamak için kullanılmıştır.
-webhose.io adresinde, API Playground sekmesinde, filtreler ekleyerek belirli tarih aralığında istediğimiz kaynağın verilerine ulaşabiliriz.
+webhose.io adresinde, API Playground sekmesinde, filtreler ekleyerek belirli tarih aralığında istenilen kaynağın verilerine ulaşılabilir.
 Eklenen filtrelerin API sorgu parametrelerine aynı sayfanın alt kısmında 'Integrate' başlığından erişilebilir.
 Aşağıda API'ın program aracılığı ile kullanımının örneği verilmiştir:
 
@@ -36,8 +36,8 @@ NewsService:
 	}
 ```
 #### NewsService getNews metodu: 
-getNews metodu sorgu mapi (queries) ve haberlerin clickbait durumunu (null) parametre olarak alır. Webhose aracılığıyla sorgu yapar.
-Sorgu sonucu dönen verileri listeye koyar. WebhoseIOClient sınıfında küçük bir hata tespit ettim. Bu hata 100'den fazla haber verisinin gelmesini engelliyordu. WebhoseIOClient getNext() metodunu güncelleyerek hatayı giderdim.
+getNews metodu sorgu mapi (queries) ve haberlerin clickbait durumunu (null) parametre olarak almakta ve Webhose aracılığıyla sorgu yapmaktadır.
+Sorgu sonucu dönen veriler listeye konulmaktadır. WebhoseIOClient sınıfında küçük bir hata tespit edilmiştir. Bu hata 100'den fazla haber verisinin gelmesini engellemektedir. WebhoseIOClient getNext() metodu güncellenerek hata giderilmiştir.
 #### WebhoseIOClient getNext()
  ```java
  public JsonElement getNext() throws IOException, URISyntaxException {
@@ -51,23 +51,22 @@ Sorgu sonucu dönen verileri listeye koyar. WebhoseIOClient sınıfında küçü
  	}
 ```
 #### news package:
-Webhose aracılığıyla haberler hakkında detaylı bilgiler çektim. (site, title, text, url, mainImage, published)
+Webhose aracılığıyla haberler hakkında detaylı bilgiler çekilmiştir. (site, title, text, url, mainImage, published)
 #### titleandsite package:
-Clickbait tespitinde sadece haber başlığı ile çalışmaya karar verdim.
+Clickbait tespitinde sadece haber başlığı ile çalışılmıştır.
 
-Web kazıma hakkındaki detayları YemiYemeWebScraping.ipynb notebook dosyasından inceleyebilirsiniz.
-Web kazıma işleminde elde ettiğim verileri metin belgesinden okudum ve veritabanına kaydettim. (detay: NewsTitleTextController)
+Web kazıma hakkındaki detaylar [YemiYemeWebScraping.ipynb](https://github.com/suleymancan/yemi-yeme-dataset/blob/master/YemiYemeWebScraping.ipynb) notebook dosyasından incelenebilir.
+Web kazıma işleminde elde edilen veriler metin belgesinden okunmuş ve veritabanına kaydedilmiştir. (detay: [NewsTitleTextController](https://github.com/suleymancan/yemi-yeme-dataset/blob/master/src/main/java/com/clickbait/dataset/titleandsite/NewsTitleTextController.java))
 
 #### preprocessing package:
-Verisetinden özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programlarını kullanacağım. Her iki programda veri setinde sınıf adının klasör  ve verilerin klasör içinde txt dosyasında olmasını istiyor. Bu packageda bu işleri yaptım.
+Verisetinden özellik çıkarımı için [text2arff](http://www.kemik.yildiz.edu.tr/?id=25) ve [prizma](https://code.google.com/archive/p/prizma-text-classification/)  programları kullanılacaktır. Her iki programda veri setinde sınıf adının klasör  ve verilerin klasör içinde txt dosyasında olmasını beklemektedir. Bu packageda bu işler yapılmıştır.
 
 
 ### Sonuç olarak:
-20.000 haber başlığı ile çalışma hedefim vardı. Bazı kaynaklardan gelen haber başlığı verilerini detaylı incelemeden 'clickbait değil' olarak sınıflandırarak hedefime ulaştım.
-Verisetindeki clickbait veya clickbait değil sınıflandırmaları tamamen gözlemlerime dayanmaktadır. 
+Veri setindeki clickbait veya clickbait değil sınıflandırmaları araştırmacının gözlemlerine dayanmaktadır. 
 
-Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterdim. Webhose.io aracılığıyla 70.000'den fazla haber çektim. Tekrarlayan haber verilerini veritabanında sildim. Web kazıma işleminden 13.000'den fazla veri (resources/static/newstitle adresinden incelenebilir) çektim. Haber başlığı olmayanları veritabanından sildim.
-Web kazımada kullandığım nayn.co, evrensel ve dokuz8haber clickbait olayına bulaşmayan sitelerdir. Web kazıma ile elde ettiğim haber başlıklarının hepsini veritabanında 'clickbait değil' olarak işaretledim. Verilerin geri kalanını okuyarak el ile 'clickbait' veya 'clickbait değil' olarak işaretledim.
+Webhose'da dogrula.org tarafından yayınlanan [clickbait raporu](https://dogrula.org/wp-content/uploads/2018/02/CLICKBAIT-RAPORU-2017-1.pdf) çalışmasındaki haber kaynaklarından veri çekmeye özen gösterilmiştir. Webhose.io aracılığıyla 70.000'den fazla haber çekilmiştir. Tekrarlayan haber verileri veritabanından silinmiştir. Web kazıma işleminden 13.000'den fazla veri (resources/static/newstitle adresinden incelenebilir) çekilmiştir. Haber başlığı olmayanlar veritabanından silinmiştir.
+Web kazımada kullanılan nayn.co, evrensel ve dokuz8haber araştırmacının gözünde clickbait olayına bulaşmayan sitelerdir. Web kazıma ile bu sitelerden elde edilen haber başlıkları  veritabanında 'clickbait değil' olarak işaretlenmiştir. Verilerin geri kalanı okunarak 'clickbait' veya 'clickbait değil' olarak işaretlenmiştir.
 
 
 Veriseti:<br/>
