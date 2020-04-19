@@ -1,4 +1,5 @@
 # yemi-yeme-dataset
+Yazı: [Clickbait Tespiti İçin Hobi Projesi: Yemi-Yeme](https://medium.com/@suleymancan/clickbait-tespiti-i%CC%87%C3%A7in-hobi-projesi-yemi-yeme-8dba667f5f0b)
 
 ### Dataset Download: <br/>
 [70000+ Turkish News](https://www.kaggle.com/suleymancan/turkishnews70000)<br/>
